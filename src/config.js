@@ -42,7 +42,6 @@ module.exports = {
         return this.curLevel;
     },
     levelUp() {
-        alert();
         if (
             this.curLevel.levelIndex === this.levels.length - 1
         ) {
