@@ -53,13 +53,19 @@ exports.start = function(){
 
 exports.gameOver = function(){
     config.over();
-    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&score='  + config.curLevel.score;
+    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&grade='  + config.curLevel.score;
     state( "game-state" ).set( "over" );
-    gameInterval.stop();
+    gameInterval.stop(); 
+    console.log(vm);    
+    // timeline.setTimeout(function(){
+    //     // sence.switchSence( "home-menu" );
+    //     // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
+    //     message.postMessage( "home-menu", "sence.switchSence" );
+    // }, 2000);
 
-    // scoreNumber = 0;
+    scoreNumber = 0; 
     volleyNum = 2;
-    fruits.length = 0;
+    fruits.length = 0; 
 };
 
 exports.applyScore = function( score ){

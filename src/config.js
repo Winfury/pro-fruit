@@ -1,5 +1,5 @@
 module.exports = {
-    url:"http://www.baidu.com",
+    url:"http://jlt.023qx.net/game/showresult",
     curLevel: {
         score: 0,
         levelIndex: 0
@@ -12,11 +12,11 @@ module.exports = {
         {
             score: 50,
             Interval: 0,
-        },
+        }, 
         {
-            score: 100,
-            Interval: 0,
-        }
+            score: 10,
+            Interval: 10,
+        },
     ],
     setScore(score) {
         this.curLevel.score = score;

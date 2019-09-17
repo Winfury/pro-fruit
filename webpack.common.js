@@ -13,11 +13,12 @@ module.exports = {
             title: "FRUIT",
             template: 'index.html',
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        // new CopyWebpackPlugin([{from:path.join(__dirname,"images"),to:path.join(__dirname,"dist/images")}])
     ],
     output: {
         filename: "[name].bundle.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist/")
     },
     resolve: {
         alias: {
@@ -33,6 +34,7 @@ module.exports = {
                     {
                         loader: 'image-webpack-loader',
                         options: {
+                            name:'images/[name].[ext]',
                             disable: true, // webpack@2.x and newer
                         },
                     },

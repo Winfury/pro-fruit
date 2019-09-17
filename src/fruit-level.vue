@@ -1,5 +1,5 @@
 <template>
-    <div class="fruit-level" >
+    <div class="fruit-level" style="display:none" >
         第 {{config.curLevel.levelIndex + 1}} 关
     </div>
 </template>
@@ -30,5 +30,6 @@
         text-align: center;
         color: #fff;
         z-index: 101;
+        display:none;
     }
 </style>
