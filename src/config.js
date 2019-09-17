@@ -6,8 +6,8 @@ module.exports = {
     },
     levels: [
         {
-            score: 5,
-            Interval: 1000,
+            score: 1,
+            Interval: 0, //已经禁用
         },
         
         {

@@ -53,7 +53,7 @@ exports.start = function(){
 
 exports.gameOver = function(){
     config.over();
-    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&score='  + config.curLevel.score;
+    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&grade='  + config.curLevel.score;
     state( "game-state" ).set( "over" );
     gameInterval.stop(); 
     console.log(vm);    
