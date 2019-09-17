@@ -20,7 +20,7 @@ var scoreNumber = 0;
 
 var random = Ucren.randomNumber;
 
-var volleyNum = 3, volleyMultipleNumber = 6;
+var volleyNum = 3, volleyMultipleNumber = 10;
 var fruits = [];
 var gameInterval;
 
@@ -71,7 +71,7 @@ exports.gameOver = function(){
 exports.applyScore = function( score ){
     if( score > volleyNum * volleyMultipleNumber )
         volleyNum ++,
-        volleyMultipleNumber += 50;
+        volleyMultipleNumber += 10;
 };
 
 exports.sliceAt = function( fruit, angle ){

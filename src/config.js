@@ -14,8 +14,8 @@ module.exports = {
             Interval: 0,
         }, 
         {
-            score: 10,
-            Interval: 10,
+            score: 150,
+            Interval: 0,
         },
     ],
     setScore(score) {
