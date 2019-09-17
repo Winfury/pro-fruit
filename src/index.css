@@ -59,3 +59,15 @@ em{
     left: 0;
     top: 0;
 }
+
+.fruit-level{
+	width: 100%;
+	height: 40px;
+	position:absolute;
+	left: 0;
+	top: 10%;
+	font-size: 40px;
+	text-align: center;
+	color: #fff;
+	z-index: 101;
+}

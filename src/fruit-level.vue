@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
     <div class="fruit-level"  >
+=======
+    <div class="fruit-level" >
+>>>>>>> 98738b4007fe30e0390be367171a329096c16140
         第 {{config.curLevel.levelIndex + 1}} 关
     </div>
 </template>
@@ -20,16 +24,4 @@
 </script>
 
 <style>
-    .fruit-level{
-        width: 100%;
-        height: 40px;
-        position:absolute;
-        left: 0;
-        top: 10%;
-        font-size: 40px;
-        text-align: center;
-        color: #fff;
-        z-index: 101;
-        display:none;
-    }
 </style>

@@ -13,9 +13,9 @@ module.exports = {
             score: 80,
             Interval:100,
         }, 
-        {
-            score: 200, 
-            Interval: 10,
+        { 
+            score: 150,
+            Interval: 0, 
         },
     ],
     setScore(score) {
@@ -44,10 +44,6 @@ module.exports = {
         return this.levels[this.curLevel.levelIndex];
     },
     over() {
-        this.curLevel = {
-            score: 0,
-            levelIndex: 0
-        }
         return this.curLevel;
     }
 }
