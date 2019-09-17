@@ -1,4 +1,4 @@
-var indexCss = require("../images/index.css")
+
 
 var timeline = require( "./timeline" );
 var tools = require( "./tools" );
@@ -46,15 +46,7 @@ exports.start = function(){
 
     [ timeline, sence, control ].invoke( "init" );
 
-    log( "正在加载鼠标控制脚本" );
-    log( "正在加载图像资源" );
-	log( "正在加载游戏脚本" );
-    log( "正在加载剧情" );
-    log( "正在初始化" );
-	log( "正在启动游戏..." );
-    log.clear();
-
-    setTimeout( sence.switchSence.saturate( sence, "home-menu" ), 3000 );
+    setTimeout( sence.switchSence.saturate( sence, "game-body" ) );
     
 };
 

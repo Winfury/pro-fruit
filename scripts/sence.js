@@ -46,7 +46,7 @@ var gameStartSnd;
 exports.init = function(){
     menuSnd = sound.create('sound/menu');
     gameStartSnd = sound.create( "sound/start" );
-	[ background, homeMask, logo, ninja, homeDesc, dojo, newSign, newGame, quit, score, lose, developing, gameOver, flash /*, fps */ ].invoke( "set" );
+	[ background, homeMask, /*, logo, ninja, */ homeDesc, dojo, newSign, newGame, quit, score, lose, developing, gameOver, flash /*, fps */ ].invoke( "set" );
     // setInterval( fps.update.bind( fps ), 500 );
 };
 
@@ -100,9 +100,9 @@ exports.showMenu = function( callback ){
 
     var group = [
     	[ homeMask, 0 ], 
-    	[ logo, 0 ], 
+    	// [ logo, 0 ], 
 
-    	[ ninja, 500 ], 
+    	// [ ninja, 500 ], 
     	[ homeDesc, 1500 ], 
 
     	[ dojo, 2000 ], 

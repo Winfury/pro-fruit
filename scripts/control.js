@@ -17,7 +17,8 @@ exports.installDragger = function(){
     var dragger = new Ucren.BasicDrag({ type: "calc" });
 
     dragger.on( "returnValue", function( dx, dy, x, y, kf ){
-    	if( kf = knife.through( x - canvasLeft, y - canvasTop ) )
+		var de = document.documentElement;
+    	if( kf = knife.through( x * 640/de.clientWidth, y * (1+480/de.clientHeight) -  de.clientHeight/2 ) )
             message.postMessage( kf, "slice" );
     });
 
@@ -37,6 +38,8 @@ exports.installClicker = function(){
 
 exports.fixCanvasPos = function(){
 	var de = document.documentElement;
+
+	console.log(680/de.clientWidth);
 
 	var fix = function( e ){
 	    canvasLeft = ( de.clientWidth - 640 ) / 2;

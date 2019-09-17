@@ -14,6 +14,7 @@ var knife = require( "./object/knife" );
 // var sence = require( "sence" );
 var background = require( "./object/background" );
 var light = require( "./object/light" );
+var config = require("../src/config");
 
 var scoreNumber = 0;
 
@@ -46,16 +47,16 @@ exports.start = function(){
     boomSnd = sound.create( "sound/boom" );
     timeline.setTimeout(function(){
         state( "game-state" ).set( "playing" );
-        gameInterval = timeline.setInterval( barbette, 1e3 );
+        gameInterval = timeline.setInterval( barbette, config.levels[config.curLevel.levelIndex].Interval );
     }, 500);
 };
 
 exports.gameOver = function(){
-    state( "game-state" ).set( "over" );
+    // state( "game-state" ).set( "over" );
+    var vm = require("../src/index.js");
+    config.over();
     gameInterval.stop();
-
-    gameOver.show();
-    
+    console.log(vm);
     // timeline.setTimeout(function(){
     //     // sence.switchSence( "home-menu" );
     //     // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
@@ -85,6 +86,7 @@ exports.sliceAt = function( fruit, angle ){
             fruits.splice( index, 1 );
         score.number( ++ scoreNumber );
         this.applyScore( scoreNumber );
+        config.setScore(scoreNumber);
     }else{
         boomSnd.play();
         this.pauseAllFruit();
