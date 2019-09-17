@@ -1,6 +1,6 @@
 <template>
   <div class="fruit-index">
-    <fruit-level v-if="sence === 'game'" />
+    <fruit-level/>
     <fruit-entry v-if="sence === 'entry'" @change="change" />
     <fruit-over v-if="sence === 'over'" @change="change" />
   </div>

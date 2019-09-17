@@ -14,11 +14,7 @@ module.exports = {
             Interval: 0,
         }, 
         {
-<<<<<<< HEAD
-            score: 100,
-=======
             score: 150,
->>>>>>> ec67a3d3d9dd93a5210d1084a0a146931582a371
             Interval: 0,
         },
     ],
@@ -48,10 +44,6 @@ module.exports = {
         return this.levels[this.curLevel.levelIndex];
     },
     over() {
-        this.curLevel = {
-            score: 0,
-            levelIndex: 0
-        }
         return this.curLevel;
     }
 }
