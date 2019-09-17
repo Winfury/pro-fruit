@@ -20,7 +20,7 @@ var scoreNumber = 0;
 
 var random = Ucren.randomNumber;
 
-var volleyNum = 3, volleyMultipleNumber = 6;
+var volleyNum = 3, volleyMultipleNumber = 10;
 var fruits = [];
 var gameInterval;
 
@@ -66,13 +66,13 @@ exports.gameOver = function(){
     scoreNumber = 0; 
     volleyNum = 2;
     fruits.length = 0; 
-    //window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&grade='  + config.curLevel.score;
+    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&grade='  + config.curLevel.score;
 };
 
 exports.applyScore = function( score ){
     if( score > volleyNum * volleyMultipleNumber )
         volleyNum ++,
-        volleyMultipleNumber += 50;
+        volleyMultipleNumber += 10;
 };
 
 exports.sliceAt = function( fruit, angle ){

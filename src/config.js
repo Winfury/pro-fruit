@@ -14,7 +14,11 @@ module.exports = {
             Interval: 0,
         }, 
         {
+<<<<<<< HEAD
             score: 100,
+=======
+            score: 150,
+>>>>>>> ec67a3d3d9dd93a5210d1084a0a146931582a371
             Interval: 0,
         },
     ],
