@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     entry: {
@@ -11,7 +12,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "FRUIT",
             template: 'index.html',
-        })
+        }),
+        new VueLoaderPlugin()
     ],
     output: {
         filename: "[name].bundle.js",
@@ -47,6 +49,10 @@ module.exports = {
                     name: 'sound/[name].[ext]',
                     limit: 1
                 }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
             ]
     }
