@@ -1,33 +1,22 @@
 module.exports = {
+    url:"http://www.baidu.com",
     curLevel: {
         score: 0,
         levelIndex: 0
     },
     levels: [
         {
-            score: 30,
-            Interval: 2000,
-        },
-        {
-            score: 40,
-            Interval: 1000,
+            score: 1,
+            Interval: 0,
         },
         {
             score: 50,
-            Interval: 500,
+            Interval: 0,
         },
         {
-            score: 60,
-            Interval: 300,
-        },
-        {
-            score: 70,
-            Interval: 200,
-        },
-        {
-            score: 80,
-            Interval: 100,
-        },
+            score: 100,
+            Interval: 0,
+        }
     ],
     setScore(score) {
         this.curLevel.score = score;
