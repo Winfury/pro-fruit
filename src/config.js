@@ -9,7 +9,10 @@ module.exports = {
             score: 1,
             Interval: 0, //已经禁用
         },
-        
+        {
+            score: 50,
+            Interval: 0,
+        }, 
         {
             score: 10,
             Interval: 10,
