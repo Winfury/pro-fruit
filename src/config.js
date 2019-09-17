@@ -14,11 +14,12 @@ module.exports = {
             Interval: 0,
         }, 
         {
-            score: 10,
-            Interval: 10,
+            score: 100,
+            Interval: 0,
         },
     ],
     setScore(score) {
+        console.log(score);
         this.curLevel.score = score;
         if(this.curLevel.score === this.levels[this.curLevel.levelIndex].score ){
             this.levelUp();
