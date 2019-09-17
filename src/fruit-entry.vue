@@ -1,9 +1,5 @@
 <template>
-    <div class="fruit-entry fruit-body" >
-        一共有 {{config.levels.length}} 关：
-        <template v-for="(level,index) of config.levels">
-            <p :key="index"> 第 {{index + 1}} 关：需要达到 {{level.score}} 分</p>
-        </template>
+    <div class="fruit-entry fruit-body" > 
         <button @click="gameStart"> 开始游戏 </button>
     </div>
 </template>

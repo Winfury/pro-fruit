@@ -56,7 +56,7 @@ exports.gameOver = function(){
     var vm = require("../src/index.js");
     config.over();
     gameInterval.stop();
-    console.log(vm);
+    console.log(vm);    
     // timeline.setTimeout(function(){
     //     // sence.switchSence( "home-menu" );
     //     // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
@@ -66,6 +66,7 @@ exports.gameOver = function(){
     scoreNumber = 0;
     volleyNum = 2;
     fruits.length = 0;
+    alert("gameover");
 };
 
 exports.applyScore = function( score ){

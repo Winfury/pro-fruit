@@ -5,28 +5,13 @@ module.exports = {
     },
     levels: [
         {
-            score: 30,
-            Interval: 2000,
-        },
-        {
-            score: 40,
+            score: 5,
             Interval: 1000,
         },
+        
         {
-            score: 50,
-            Interval: 500,
-        },
-        {
-            score: 60,
-            Interval: 300,
-        },
-        {
-            score: 70,
-            Interval: 200,
-        },
-        {
-            score: 80,
-            Interval: 100,
+            score: 10,
+            Interval: 10,
         },
     ],
     setScore(score) {
