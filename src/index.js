@@ -5,7 +5,7 @@ var index_css = require('./index.css');
 var indexComponet = require('./index.vue').default;
 Vue.default.prototype.$game = game;
 Vue.default.prototype.$store = {
-    sence: 'entry',
+    sence: 'game',
     set(vm,key,value){
         this[key] = value;
         vm[key] = value
@@ -19,6 +19,7 @@ var vm = new Vue.default({
     data: {
     },
     mounted() {
+        this.$game.start();
     },
 
 });

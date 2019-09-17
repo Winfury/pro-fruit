@@ -20,7 +20,7 @@ var scoreNumber = 0;
 
 var random = Ucren.randomNumber;
 
-var volleyNum = 2, volleyMultipleNumber = 5;
+var volleyNum = 3, volleyMultipleNumber = 6;
 var fruits = [];
 var gameInterval;
 
@@ -52,10 +52,10 @@ exports.start = function(){
 };
 
 exports.gameOver = function(){
-    // state( "game-state" ).set( "over" );
-    var vm = require("../src/index.js");
     config.over();
-    gameInterval.stop();
+    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&score='  + config.curLevel.score;
+    state( "game-state" ).set( "over" );
+    gameInterval.stop(); 
     console.log(vm);    
     // timeline.setTimeout(function(){
     //     // sence.switchSence( "home-menu" );
@@ -63,10 +63,9 @@ exports.gameOver = function(){
     //     message.postMessage( "home-menu", "sence.switchSence" );
     // }, 2000);
 
-    scoreNumber = 0;
+    scoreNumber = 0; 
     volleyNum = 2;
-    fruits.length = 0;
-    alert("gameover");
+    fruits.length = 0; 
 };
 
 exports.applyScore = function( score ){
