@@ -23,7 +23,6 @@ module.exports = {
   },
   computed:{
       curLevel(){
-          alert();
           return config.curLevel;
       }
   },
