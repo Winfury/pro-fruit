@@ -6,11 +6,15 @@ var indexComponet = require('./index.vue').default;
 Vue.default.prototype.$game = game;
 Vue.default.prototype.$store = {
     sence: 'game',
-    set(vm,key,value){
+    set(vm, key, value) {
         this[key] = value;
         vm[key] = value
     }
 };
+
+document.body.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+}, { passive: false });
 
 var vm = new Vue.default({
     el: '#vm',
