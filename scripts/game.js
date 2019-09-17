@@ -53,10 +53,11 @@ exports.start = function(){
 
 exports.gameOver = function(){
     config.over();
-    
+    console.log("config:==", config.curLevel.score);
+ 
+    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&grade='  + config.curLevel.score;
     state( "game-state" ).set( "over" );
-    gameInterval.stop(); 
-    console.log(vm);    
+    gameInterval.stop();  
     // timeline.setTimeout(function(){
     //     // sence.switchSence( "home-menu" );
     //     // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
@@ -66,7 +67,8 @@ exports.gameOver = function(){
     scoreNumber = 0; 
     volleyNum = 2;
     fruits.length = 0; 
-    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&grade='  + config.curLevel.score;
+    return;
+    
 };
 
 exports.applyScore = function( score ){

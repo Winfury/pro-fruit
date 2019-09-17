@@ -190,7 +190,7 @@ var buzz = {
 	            }
 	
 	            this.whenReady( function() {
-	                this.sound.currentTime = time;
+	               // this.sound.currentTime = time;
 	            });
 	            return this;
 	        };

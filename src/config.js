@@ -6,20 +6,16 @@ module.exports = {
     },
     levels: [
         {
-            score: 1,
-            Interval: 0, //已经禁用
+            score: 20,
+            Interval: 3000, //已经禁用
         },
         {
-            score: 50,
-            Interval: 0,
+            score: 80,
+            Interval:100,
         }, 
         {
-<<<<<<< HEAD
-            score: 100,
-=======
-            score: 150,
->>>>>>> ec67a3d3d9dd93a5210d1084a0a146931582a371
-            Interval: 0,
+            score: 200, 
+            Interval: 10,
         },
     ],
     setScore(score) {
