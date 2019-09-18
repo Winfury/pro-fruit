@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
     <div class="fruit-level"  >
-=======
-    <div class="fruit-level" >
->>>>>>> 98738b4007fe30e0390be367171a329096c16140
         第 {{config.curLevel.levelIndex + 1}} 关
     </div>
 </template>

@@ -53,13 +53,7 @@ exports.start = function () {
 
 exports.gameOver = function () {
     config.over();
-<<<<<<< HEAD
-    console.log("config:==", config.curLevel.score);
- 
-    window.location.href=config.url + '?level=' + config.curLevel.levelIndex + '&grade='  + config.curLevel.score;
-    state( "game-state" ).set( "over" );
     gameInterval.stop();  
-=======
     var levelIndex = 0
     for (var i=0; i < config.levels.length; i++) {
         if (scoreNumber >= config.levels[i].score) {
@@ -70,7 +64,6 @@ exports.gameOver = function () {
     window.location.href=config.url + '?level=' + levelIndex + '&grade='  + scoreNumber;
     state("game-state").set("over");
     gameInterval.stop();
->>>>>>> 98738b4007fe30e0390be367171a329096c16140
     // timeline.setTimeout(function(){
     //     // sence.switchSence( "home-menu" );
     //     // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
@@ -79,13 +72,7 @@ exports.gameOver = function () {
 
     // scoreNumber = 0;
     volleyNum = 2;
-<<<<<<< HEAD
-    fruits.length = 0; 
-    return;
-    
-=======
     fruits.length = 0;
->>>>>>> 98738b4007fe30e0390be367171a329096c16140
 };
 
 exports.applyScore = function (score) {
