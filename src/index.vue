@@ -1,36 +1,36 @@
 <template>
   <div class="fruit-index">
-    <fruit-level/>
-    <fruit-entry v-if="sence === 'entry'" @change="change" />
-    <fruit-over v-if="sence === 'over'" @change="change" />
+    <fruit-level v-if="sence === 'game'"/>
+    <fruit-entry v-if="sence === 'entry'" />
+    <fruit-over v-if="sence === 'over'" />
   </div>
 </template>
 
 <script>
 var fruitEntry = require("./fruit-entry.vue").default;
 var fruitLevel = require("./fruit-level.vue").default;
+var fruitOver = require("./fruit-over.vue").default;
 var config = require("./config").default;
 
 module.exports = {
   name: "fruit-index",
   components: {
-    fruitEntry,fruitLevel
+    fruitEntry,
+    fruitLevel,
+    fruitOver
   },
   data: function() {
     return {
-      sence: this.$store.sence
+      sence: window.store.sence
     };
   },
-  computed:{
-      curLevel(){
-          return config.curLevel;
-      }
+  computed: {
   },
-  mounted() {},
+  mounted() {
+    setInterval(()=>{this.sence = window.store.sence},300)
+  },
   methods: {
-    change(res) {
-      this.$store.set(this, "sence", res.sence);
-    }
+    change(res) {}
   }
 };
 </script>

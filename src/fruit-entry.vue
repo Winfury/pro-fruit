@@ -11,16 +11,10 @@
         data: function(){
             return {
                 config:config,
-                sence: this.$store.sence
             }
         },
         methods:{
             gameStart(){
-                this.$store.set(this, 'sence','game');
-                this.$emit('change',{
-                    sence: 'game'
-                })
-                this.$game.start();
             }
         }
     }

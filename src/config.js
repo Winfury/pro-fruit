@@ -19,7 +19,6 @@ module.exports = {
         },
     ],
     setScore(score) {
-        console.log(score);
         this.curLevel.score = score;
         if(this.curLevel.score === this.levels[this.curLevel.levelIndex].score ){
             this.levelUp();

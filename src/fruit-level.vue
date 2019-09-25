@@ -10,8 +10,7 @@
     module.exports ={
         data: function(){
             return {
-                config:config,
-                sence: this.$store.sence
+                config:config
             }
         },
         methods:{

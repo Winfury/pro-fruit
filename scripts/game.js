@@ -61,7 +61,8 @@ exports.gameOver = function () {
             break;
         }
     }
-    window.location.href=config.url + '?level=' + levelIndex + '&grade='  + scoreNumber;
+    window.store.set('sence', 'over')
+    // window.location.href=config.url + '?level=' + levelIndex + '&grade='  + scoreNumber;
     state("game-state").set("over");
     gameInterval.stop();
     // timeline.setTimeout(function(){
