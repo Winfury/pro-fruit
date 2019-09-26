@@ -32,8 +32,14 @@ var vm = new Vue.default({
             window.urlSearch.delete('new');
             window.location.search = window.urlSearch.toString();
         }
+        if(parseInt(localStorage.getItem('times')) > 2){
+            alert('超过3次了');
+            return;
+        }
         if (window.urlSearch.get("play")) {
             this.$game.start();
+        }else{
+            window.store.set('sence','over')
         }
     },
 

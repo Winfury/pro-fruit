@@ -12,15 +12,10 @@
 <script>
 var config = require("./config");
 module.exports = {
-  props: {
-    data: {
-      default() {
-        return {};
-      }
-    }
-  },
   data: function() {
-    return {};
+    return {
+        data:JSON.parse(localStorage.getItem('overData'))
+    };
   },
   computed: {
     sence() {

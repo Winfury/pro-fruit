@@ -67,6 +67,7 @@ exports.gameOver = function () {
     localStorage.setItem('times', curTimes);
     window.submit(curTimes , levelIndex, scoreNumber).then(data => {
         window.store.data = data;
+        localStorage.setItem('overData',JSON.stringify(window.store.data))
         window.store.set('sence','over');
     })
 
