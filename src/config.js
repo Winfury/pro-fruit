@@ -7,11 +7,11 @@ module.exports = {
     levels: [
         {
             score: 20,
-            Interval: 3000, //已经禁用
+            Interval: 0, //已经禁用
         },
         {
             score: 80,
-            Interval:100,
+            Interval:0,
         }, 
         { 
             score: 150,

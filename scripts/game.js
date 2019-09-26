@@ -63,6 +63,13 @@ exports.gameOver = function () {
     }
     window.store.set('sence', 'over')
     // window.location.href=config.url + '?level=' + levelIndex + '&grade='  + scoreNumber;
+    let curTimes = parseInt(localStorage.getItem('times')) + 1;
+    localStorage.setItem('times', curTimes);
+    window.submit(curTimes , levelIndex, scoreNumber).then(data => {
+        window.store.data = data;
+        window.store.set('sence','over');
+    })
+
     state("game-state").set("over");
     gameInterval.stop();
     // timeline.setTimeout(function(){

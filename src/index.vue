@@ -2,7 +2,7 @@
   <div class="fruit-index">
     <fruit-level v-if="sence === 'game'"/>
     <fruit-entry v-if="sence === 'entry'" />
-    <fruit-over v-if="sence === 'over'" />
+    <fruit-over v-if="sence === 'over'" :data='data'/>
   </div>
 </template>
 
@@ -21,13 +21,14 @@ module.exports = {
   },
   data: function() {
     return {
-      sence: window.store.sence
+      sence: window.store.sence,
+      data: window.store.data
     };
   },
   computed: {
   },
   mounted() {
-    setInterval(()=>{this.sence = window.store.sence},300)
+    setInterval(()=>{this.sence = window.store.sence,this.data= window.store.data},300)
   },
   methods: {
     change(res) {}
