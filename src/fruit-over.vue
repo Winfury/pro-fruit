@@ -6,6 +6,8 @@
       <div class="coupon-card">{{data.couponName}}</div>
       <div class="coupon-submit-1" @click="submit(0)">直接领奖</div>
       <div class="coupon-submit-2" @click="submit(1)">支付并领奖</div>
+      <div class="coupon-alert">升级会员免费3次游戏</div>
+      
     </div>
   </div>
 </template>
