@@ -62,9 +62,10 @@ exports.gameOver = function () {
         }
     }
     window.store.set('sence', 'over')
-    // window.location.href=config.url + '?level=' + levelIndex + '&grade='  + scoreNumber;
     let curTimes = parseInt(localStorage.getItem('times')) + 1;
     localStorage.setItem('times', curTimes);
+    window.urlSearch.delete('play');
+    window.location.search = window.urlSearch.toString();
     window.submit(curTimes , levelIndex, scoreNumber).then(data => {
         window.store.data = data;
         localStorage.setItem('overData',JSON.stringify(window.store.data))
@@ -73,13 +74,6 @@ exports.gameOver = function () {
 
     state("game-state").set("over");
     gameInterval.stop();
-    // timeline.setTimeout(function(){
-    //     // sence.switchSence( "home-menu" );
-    //     // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
-    //     message.postMessage( "home-menu", "sence.switchSence" );
-    // }, 2000);
-
-    // scoreNumber = 0;
     volleyNum = 2;
     fruits.length = 0;
 };

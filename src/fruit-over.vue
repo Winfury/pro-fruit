@@ -36,11 +36,13 @@ module.exports = {
 }
 .coupon {
   height: 100%;
-  width: 100%;
+  width: 92%;
+ margin: 0 4%;
   background-image: url(../images/coupon-bg.png);
   background-position: center;
-  background-size: 110% auto;
+  background-size: 120% auto;
   background-repeat: no-repeat;
+  position: relative;
 }
 .coupon .coupon-title {
   position: absolute;
@@ -53,12 +55,11 @@ module.exports = {
 }
 .coupon .coupon-content {
   position: absolute;
-  width: 100%;
   top: 42%;
   font-size: 12px;
   line-height: 14px;
-  width: 94%;
-  margin: 0 3%;
+  width: 96%;
+  margin: 0 2%;
   color: #fff;
   text-align: center;
 }
@@ -81,12 +82,12 @@ module.exports = {
 
 .coupon .coupon-submit {
   position: absolute;
-  width: 30%;
-  left: 35%;
+  width: 40%;
+  left: 30%;
   top: 63%;
-  font-size: 13px;
-  height: 22px;
-  line-height: 22px;
+  font-size: 14px;
+  height: 24px;
+  line-height: 24px;
   color: #f1eb34;
   border: 1px solid #fff;
   border-radius: 12px;
