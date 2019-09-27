@@ -61,6 +61,7 @@ exports.gameOver = function () {
             break;
         }
     }
+    localStorage.setItem('scoreNumber', scoreNumber);
     window.store.set('sence', 'over')
     let curTimes = parseInt(localStorage.getItem('times')) + 1;
     localStorage.setItem('times', curTimes);

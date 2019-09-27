@@ -33,7 +33,8 @@ var vm = new Vue.default({
             window.location.search = window.urlSearch.toString();
         }
         if(parseInt(localStorage.getItem('times')) > 2){
-            alert('超过3次了');
+            alert('一天最多只有3次游戏机会 ！');
+            window.store.set('sence','over')
             return;
         }
         if (window.urlSearch.get("play")) {
