@@ -65,12 +65,12 @@ exports.gameOver = function () {
     window.store.set('sence', 'over')
     let curTimes = parseInt(localStorage.getItem('times')) + 1;
     localStorage.setItem('times', curTimes);
-    window.urlSearch.delete('play');
-    window.location.search = window.urlSearch.toString();
     window.submit(curTimes , levelIndex, scoreNumber).then(data => {
         window.store.data = data;
         localStorage.setItem('overData',JSON.stringify(window.store.data))
         window.store.set('sence','over');
+        window.urlSearch.delete('play');
+        window.location.search = window.urlSearch.toString();
     })
 
     state("game-state").set("over");
