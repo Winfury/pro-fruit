@@ -4,8 +4,8 @@
       <div class="coupon-title">{{data.title}}</div>
       <div class="coupon-content">{{data.content}}</div>
       <div class="coupon-card">{{data.couponName}}</div>
-      <div class="coupon-submit-1" @click="submit(0)">直接领奖</div>
-      <div class="coupon-submit-2" @click="submit(1)">支付并领奖</div>
+      <div class="coupon-submit-1" v-if="loading" @click="submit(0)">直接领奖</div>
+      <div class="coupon-submit-2" v-if="loading" @click="submit(1)">支付并领奖</div>
       <div class="coupon-alert">升级会员免费3次游戏</div>
       
     </div>
@@ -18,7 +18,8 @@ const axios = require("axios");
 module.exports = {
   data: function() {
     return {
-      data: JSON.parse(localStorage.getItem("overData"))
+      data: JSON.parse(localStorage.getItem("overData")),
+      loading: true,
     };
   },
   computed: {
@@ -62,6 +63,7 @@ module.exports = {
       });
     },
     getInfo(callback) {
+      this.loading = false;
       let times = parseInt(localStorage.getItem("times"));
       var levelIndex = 0;
       var scoreNumber = localStorage.getItem("scoreNumber");
@@ -77,9 +79,11 @@ module.exports = {
         )
         .then(res => {
           callback(res.data.data);
+      this.loading = true;
         })
         .catch(err => {
           console.error();
+      this.loading = true;
         });
     }
   }
