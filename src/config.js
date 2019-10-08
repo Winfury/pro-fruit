@@ -6,15 +6,15 @@ module.exports = {
     },
     levels: [
         {
-            score: 20,
+            score: 10,
             Interval: 0, //已经禁用
         },
         {
-            score: 80,
+            score: 20,
             Interval:0,
         }, 
         { 
-            score: 150,
+            score: 30,
             Interval: 0, 
         },
     ],

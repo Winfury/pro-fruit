@@ -27,10 +27,15 @@ var vm = new Vue.default({
     data: {
     },
     mounted() {
+        console.log();
         if (window.urlSearch.get("new")) {
             localStorage.setItem('times', 0);
             window.urlSearch.delete('new');
             window.location.search = window.urlSearch.toString();
+        }
+        if(this.getNowFormatDate() !== localStorage.getItem('date')){
+            localStorage.setItem('times', 0);
+            localStorage.setItem('date', this.getNowFormatDate())
         }
         if(parseInt(localStorage.getItem('times')) > 2){
             alert('一天最多只有3次游戏机会 ！');
@@ -43,7 +48,23 @@ var vm = new Vue.default({
             window.store.set('sence','over')
         }
     },
-
+    methods:{
+        getNowFormatDate() {
+            var date = new Date();
+            var seperator1 = "-";
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            var currentdate = year + seperator1 + month + seperator1 + strDate;
+            return currentdate;
+        },
+    }
 });
 
 module.exports = vm;

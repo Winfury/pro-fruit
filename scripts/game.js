@@ -74,7 +74,6 @@ exports.gameOver = function () {
     })
 
     state("game-state").set("over");
-    gameInterval.stop();
     volleyNum = 2;
     fruits.length = 0;
 };
