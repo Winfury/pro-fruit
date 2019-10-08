@@ -40,6 +40,7 @@ var vm = new Vue.default({
         if(parseInt(localStorage.getItem('times')) > 2){
             alert('一天最多只有3次游戏机会 ！');
             window.store.set('sence','over')
+            window.location.href('/user/index');
             return;
         }
         if (window.urlSearch.get("play")) {
@@ -47,7 +48,7 @@ var vm = new Vue.default({
         }else{
             window.store.set('sence','over')
         }
-    },
+    },　 
     methods:{
         getNowFormatDate() {
             var date = new Date();
