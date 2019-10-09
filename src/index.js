@@ -27,29 +27,13 @@ var vm = new Vue.default({
     data: {
     },
     mounted() {
-        console.log();
-        if (window.urlSearch.get("new")) {
-            localStorage.setItem('times', 0);
-            window.urlSearch.delete('new');
-            window.location.search = window.urlSearch.toString();
-        }
-        if(this.getNowFormatDate() !== localStorage.getItem('date')){
-            localStorage.setItem('times', 0);
-            localStorage.setItem('date', this.getNowFormatDate())
-        }
-        if(parseInt(localStorage.getItem('times')) > 2){
-            alert('一天最多只有3次游戏机会 ！');
-            window.store.set('sence','over')
-            window.location.href('/user/index');
-            return;
-        }
-        if (window.urlSearch.get("play")) {
-            this.$game.start();
-        }else{
-            window.store.set('sence','over')
-        }
-    },　 
-    methods:{
+        this.getInfo().then(res=>{
+            this.init(res)
+        }).catch(err=>{
+            console.error(err);
+        })
+    },
+    methods: {
         getNowFormatDate() {
             var date = new Date();
             var seperator1 = "-";
@@ -65,12 +49,37 @@ var vm = new Vue.default({
             var currentdate = year + seperator1 + month + seperator1 + strDate;
             return currentdate;
         },
+        init(canPlay) {
+            if (!canPlay) {
+                alert('一天最多只有3次游戏机会 ！');
+                window.store.set('sence', 'over')
+                // window.location.href='/user/index';
+                return;
+            }
+            if (window.urlSearch.get("play")) {
+                this.$game.start();
+            } else {
+                window.store.set('sence', 'over')
+            }
+        },
+        getInfo() {
+            return new Promise((reslove, reject) => {
+                axios.get(`http://jlt.023qx.net/game/CheckGameTimes?storeid=111`)
+                    .then(res => {
+                        reslove(res.data)
+                        console.log(res);
+                    }).catch(err => {
+                        console.error();
+                        reject(err)
+                    })
+            })
+        }
     }
 });
 
 module.exports = vm;
 
-window.submit = function (times,level ,score) {
+window.submit = function (times, level, score) {
     return new Promise((reslove, reject) => {
         axios.get(`http://jlt.023qx.net/game/getgamedata?times=${times}&grade=${level}`)
             .then(res => {
