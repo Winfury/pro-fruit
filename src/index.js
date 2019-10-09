@@ -27,9 +27,9 @@ var vm = new Vue.default({
     data: {
     },
     mounted() {
-        this.getInfo().then(res=>{
+        this.getInfo().then(res => {
             this.init(res)
-        }).catch(err=>{
+        }).catch(err => {
             console.error(err);
         })
     },
@@ -64,7 +64,8 @@ var vm = new Vue.default({
         },
         getInfo() {
             return new Promise((reslove, reject) => {
-                axios.get(`http://jlt.023qx.net/game/CheckGameTimes?storeid=111`)
+                let storeid = window.urlSearch.get("storeid");
+                axios.get(`http://jlt.023qx.net/game/CheckGameTimes?${storeid ? ('storeid=' + storeid) : ''}`)
                     .then(res => {
                         reslove(res.data)
                         console.log(res);
