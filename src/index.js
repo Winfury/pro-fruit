@@ -2,6 +2,7 @@ var game = require('../scripts/main');
 var Vue = require('vue');
 var index_css = require('./index.css');
 const axios = require('axios');
+var config = require("./config");
 require('url-search-params-polyfill');
 
 var indexComponet = require('./index.vue').default;
@@ -65,7 +66,7 @@ var vm = new Vue.default({
         getInfo() {
             return new Promise((reslove, reject) => {
                 let storeid = window.urlSearch.get("storeid");
-                axios.get(`http://jlt.023qx.net/game/CheckGameTimes?${storeid ? ('storeid=' + storeid) : ''}`)
+                axios.get(`${config.domain}game/CheckGameTimes?${storeid ? ('storeid=' + storeid) : ''}`)
                     .then(res => {
                         reslove(res.data)
                         console.log(res);
@@ -82,7 +83,7 @@ module.exports = vm;
 
 window.submit = function (times, level, score) {
     return new Promise((reslove, reject) => {
-        axios.get(`http://jlt.023qx.net/game/getgamedata?times=${times}&grade=${level}`)
+        axios.get(`${config.domain}game/getgamedata?times=${times}&grade=${level}`)
             .then(res => {
                 reslove(res.data.data)
                 console.log(res.data.data);

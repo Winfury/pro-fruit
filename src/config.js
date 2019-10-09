@@ -1,5 +1,5 @@
 module.exports = {
-    url:"http://jlt.023qx.net/game/showresult",
+    domain:'http://jlt.023qx.net/',
     curLevel: {
         score: 0,
         levelIndex: 0
