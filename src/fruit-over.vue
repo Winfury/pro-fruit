@@ -75,7 +75,7 @@ module.exports = {
       }
       axios
         .get(
-          `${config.domain}game/DrawGameTicket?times=${times}&grade=${levelIndex}`
+          `${config.domain}game/DrawGameTicket?grade=${scoreNumber}`
         )
         .then(res => {
           callback(res.data.data);

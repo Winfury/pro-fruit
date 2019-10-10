@@ -83,7 +83,7 @@ module.exports = vm;
 
 window.submit = function (times, level, score) {
     return new Promise((reslove, reject) => {
-        axios.get(`${config.domain}game/getgamedata?times=${times}&grade=${level}`)
+        axios.get(`${config.domain}game/getgamedata?grade=${score}`)
             .then(res => {
                 reslove(res.data.data)
                 console.log(res.data.data);
