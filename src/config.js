@@ -1,5 +1,5 @@
 module.exports = {
-    domain:'http://jlt.023qx.net/',
+    domain:'http://www.vipxfz.com/',
     curLevel: {
         score: 0,
         levelIndex: 0
