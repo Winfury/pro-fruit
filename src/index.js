@@ -52,6 +52,7 @@ var vm = new Vue.default({
         },
         init(canPlay) {
             console.log('---',canPlay)
+            alert(canPlay);
             if (!canPlay) {
                 alert('一天最多只有3次游戏机会 ！');
                 window.store.set('sence', 'over')
