@@ -52,7 +52,6 @@ var vm = new Vue.default({
         },
         init(canPlay) {
             console.log('---',canPlay)
-            alert(canPlay);
             if (!canPlay) {
                 alert('一天最多只有3次游戏机会 ！');
                 window.store.set('sence', 'over')
@@ -70,7 +69,7 @@ var vm = new Vue.default({
                 let storeid = window.urlSearch.get("storeid");
                 axios.get(`${config.domain}game/CheckGameTimes?${storeid ? ('storeid=' + storeid) : ''}`)
                     .then(res => {
-                        reslove(res.data)
+                        reslove(res.data.data)
                         console.log(res);
                     }).catch(err => {
                         console.error();
