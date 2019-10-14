@@ -84,6 +84,7 @@ em{
 	background-size: 120% auto;
 	background-repeat: no-repeat;
 	position: relative;
+	z-index: 111111111;
   }
   .coupon .coupon-title {
 	position: absolute;
@@ -138,6 +139,19 @@ em{
 	position: absolute;
 	width: 40%;
 	right: 5%;
+	top: 63%;
+	font-size: 14px;
+	height: 24px;
+	line-height: 24px;
+	color: #f1eb34;
+	border: 1px solid #fff;
+	border-radius: 12px;
+	text-align: center;
+  }
+  .coupon .coupon-submit-3{
+	position: absolute;
+	width: 40%;
+	right: 30%;
 	top: 63%;
 	font-size: 14px;
 	height: 24px;

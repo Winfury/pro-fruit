@@ -72,8 +72,6 @@ exports.gameOver = function () {
         window.urlSearch.delete('play');
         window.location.search = window.urlSearch.toString();
     })
-
-    state("game-state").set("over");
     volleyNum = 2;
     fruits.length = 0;
 };

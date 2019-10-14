@@ -6,17 +6,13 @@ module.exports = {
     },
     levels: [
         {
-            score: 50,
+            score: 30,
             Interval: 0, //已经禁用
         },
         {
-            score: 100,
-            Interval:0,
-        }, 
-        { 
             score: 150,
-            Interval: 0, 
-        },
+            Interval:0,
+        }
     ],
     setScore(score) {
         this.curLevel.score = score;
