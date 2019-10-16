@@ -62,7 +62,6 @@ exports.gameOver = function () {
         }
     }
     localStorage.setItem('scoreNumber', scoreNumber);
-    window.store.set('sence', 'over')
     let curTimes = parseInt(localStorage.getItem('times')) + 1;
     localStorage.setItem('times', curTimes);
     window.submit(curTimes , levelIndex, scoreNumber).then(data => {
@@ -106,7 +105,12 @@ exports.sliceAt = function (fruit, angle) {
 exports.pauseAllFruit = function () {
     gameInterval.stop();
     knife.pause();
-    fruits.invoke("pause");
+    try{
+        fruits.invoke("pause");
+    }catch(err){
+        console.error(err);
+        this.gameOver();
+    }
 };
 
 // message.addEventListener("fruit.fallOff", function( fruit ){
